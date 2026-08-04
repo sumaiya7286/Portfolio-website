@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <h1>Sumaiya</h1>
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+          </ul>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          <p>Frontend Developer</p>
+          <h1>Hi! I am <span>Sumaiya</span></h1>
+          <p>Aspire to be a full stack developer.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-1">
+            <img src="assests/user.png" />
+          </div>
+          <div class="col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              I am a second year student pursuing CSE in IGDTUW. I want to be a
+              mern developer. I have done one internship as well in an
+              automobile company remotely.
+            </p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>HTML, CSS, JS, Basic React</span></li>
+                <li>Github</li>
+                <li>Tailwind, Bootstrap</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>Intern at Automobile Company</span></li>
+                <li>Completed Frontend workshop</li>
+                <li>Selected for Hackathon</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="projects">
+      <div class="container">
+        <h1 class="sub-title">Projects</h1>
+        <div class="projects-list">
+          <div>
+            <h2>ToDo App</h2>
+            <img src="assests/todo.png" />
+            <br />
+            <p>
+              A simple and responsive To-Do application built using HTML, CSS,
+              and Vanilla JavaScript.
+            </p>
+            <a href="https://github.com/sumaiya7286/to-do-app.git"
+              >Github link</a
+            >
+          </div>
+          <div>
+            <h2>Weather App</h2>
+            <img src="assests/weather.png" /><br />
+            <p>
+              A responsive Weather App built with HTML, CSS, and Vanilla
+              JavaScript that provides real-time weather information using a
+              Weather API.
+            </p>
+            <a href="https://github.com/sumaiya7286/weather-app.git"
+              >Github link</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p>
+              <i class="fa-solid fa-envelope"></i>
+              sumaiyakhatoon772@gmail.com
+            </p>
+            <p>
+              <i class="fa-solid fa-phone"></i>
+              +91 8882498275
+            </p>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/sumaiya_3667/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+
+              <a href="https://github.com/sumaiya7286" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/sumaiya-12403b417/?isSelfProfile=false"
+                target="_blank"
+              >
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; 2026 Sumaiya. All Rights Reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
