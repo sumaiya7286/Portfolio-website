@@ -125,43 +125,51 @@ img { max-width: 100%; display: block; }
 /* ---------- navbar ---------- */
 .navbar {
   position: fixed;
-  top: 0;
+  top: 16px;
   left: 0;
   width: 100%;
   z-index: 100;
-  padding: 20px 0;
-  transition: padding 0.3s, background 0.3s, border-color 0.3s;
-  border-bottom: 1px solid transparent;
+  transition: top 0.3s;
 }
-.navbar.scrolled {
-  padding: 12px 0;
-  background: rgba(7, 10, 19, 0.7);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom-color: var(--glass-border);
+.navbar.scrolled { top: 10px; }
+.nav-inner {
+  position: relative;
+  padding: 12px 14px 12px 28px;
+  border-radius: 50px;
 }
+/* glass layer lives on a pseudo-element so the fixed mobile menu still works */
+.nav-inner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: background 0.3s;
+}
+.navbar.scrolled .nav-inner::before { background: rgba(10, 14, 26, 0.65); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; }
 .logo { font-size: 26px; font-weight: 700; color: var(--cyan); }
 .logo span { color: var(--pink); }
-.nav-links { display: flex; gap: 34px; list-style: none; }
+.nav-links { display: flex; gap: 6px; list-style: none; }
 .nav-links a {
+  display: block;
+  padding: 8px 18px;
+  border-radius: 50px;
   font-size: 15px;
   color: var(--muted);
-  position: relative;
-  transition: color 0.3s;
+  transition: color 0.3s, background 0.3s;
 }
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: var(--grad);
-  transition: width 0.35s;
+.nav-links a:hover { color: #fff; background: rgba(255, 255, 255, 0.06); }
+.nav-links a.active {
+  color: #fff;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.25), rgba(168, 85, 247, 0.25));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
 }
-.nav-links a:hover, .nav-links a.active { color: #fff; }
-.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 .menu-btn {
   display: none;
   background: none;
@@ -272,27 +280,6 @@ img { max-width: 100%; display: block; }
 @keyframes float {
   50% { transform: translateY(-14px); }
 }
-.float-card {
-  position: absolute;
-  padding: 10px 16px;
-  border-radius: 14px;
-  font-size: 14px;
-  font-weight: 500;
-  background: rgba(15, 20, 35, 0.75);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(10px);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-  animation: float 5s ease-in-out infinite;
-}
-.float-card i { color: var(--cyan); font-size: 18px; }
-.fc1 { top: 10%; left: -40px; }
-.fc2 { bottom: 18%; right: -40px; animation-delay: -2s; }
-.fc2 i { color: #facc15; }
-.fc3 { bottom: -4%; left: 8%; animation-delay: -3.5s; }
-.fc3 i { color: var(--pink); }
 
 .scroll-down {
   position: absolute;
@@ -604,9 +591,7 @@ img { max-width: 100%; display: block; }
   .hero-btns, .hero-social { justify-content: center; }
   .hero-img { order: -1; }
   .img-ring { width: min(280px, 70vw); }
-  .fc1 { left: -20px; }
-  .fc2 { right: -20px; }
-  .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
   .scroll-down { display: none; }
 }
 
@@ -629,13 +614,7 @@ img { max-width: 100%; display: block; }
   }
   .nav-links.open { right: 0; }
   .nav-links a { font-size: 18px; }
-  .float-card { font-size: 12px; padding: 8px 12px; }
-  .about-card, .contact-form { padding: 24px; }
-  .stat h3 { font-size: 26px; }
-  .section { padding-top: 90px; }
-  .cursor-glow { display: none; }
-}
-
+  
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .reveal { opacity: 1; transform: none; }
