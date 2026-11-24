@@ -3,145 +3,273 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <title>Sumaiya | Frontend Developer</title>
+    <meta
+      name="description"
+      content="Sumaiya – CSE student at IGDTUW and frontend developer building responsive web apps with HTML, CSS, JavaScript and React."
+    />
+    <meta property="og:title" content="Sumaiya | Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Portfolio of Sumaiya, aspiring MERN stack developer."
+    />
+    <meta property="og:image" content="assets/user.webp" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%230b0f19'/><text x='50' y='70' font-size='62' text-anchor='middle' font-family='Arial' font-weight='700' fill='%2322d3ee'>S</text></svg>"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     />
-    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="header">
-      <div class="container">
-        <nav>
-          <h1>Sumaiya</h1>
-          <ul id="sidemenu">
-            <li><a href="#header">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-          </ul>
-          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-        </nav>
-        <div class="header-text">
-          <p>Frontend Developer</p>
-          <h1>Hi! I am <span>Sumaiya</span></h1>
-          <p>Aspire to be a full stack developer.</p>
-        </div>
-      </div>
+    <!-- animated background -->
+    <div class="bg" aria-hidden="true">
+      <span class="blob b1"></span>
+      <span class="blob b2"></span>
+      <span class="blob b3"></span>
+      <div class="grid-overlay"></div>
     </div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
-    <div id="about">
-      <div class="container">
-        <div class="row">
-          <div class="col-1">
-            <img src="assests/user.png" />
-          </div>
-          <div class="col-2">
-            <h1 class="sub-title">About Me</h1>
-            <p>
-              I am a second year student pursuing CSE in IGDTUW. I want to be a
-              mern developer. I have done one internship as well in an
-              automobile company remotely.
-            </p>
+    <!-- navbar -->
+    <header class="navbar" id="navbar">
+      <nav class="container nav-inner">
+        <a href="#home" class="logo">Sumaiya<span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </header>
 
-            <div class="tab-titles">
-              <p class="tab-links active-link" onclick="opentab('skills')">
-                Skills
-              </p>
-              <p class="tab-links" onclick="opentab('experience')">
-                Experience
-              </p>
-            </div>
-            <div class="tab-contents active-tab" id="skills">
-              <ul>
-                <li><span>HTML, CSS, JS, Basic React</span></li>
-                <li>Github</li>
-                <li>Tailwind, Bootstrap</li>
-              </ul>
-            </div>
-            <div class="tab-contents" id="experience">
-              <ul>
-                <li><span>Intern at Automobile Company</span></li>
-                <li>Completed Frontend workshop</li>
-                <li>Selected for Hackathon</li>
-              </ul>
-            </div>
+    <main>
+      <!-- hero -->
+      <section id="home" class="hero container">
+        <div class="hero-text">
+          <p class="badge reveal">
+            <span class="dot"></span> Open to internships
+          </p>
+          <h1 class="reveal">
+            Hi, I'm <span class="gradient-text">Sumaiya</span>
+          </h1>
+          <h2 class="reveal">
+            I'm a <span class="typed" id="typed"></span
+            ><span class="caret">|</span>
+          </h2>
+          <p class="hero-sub reveal">
+            CSE student at IGDTUW, building clean and responsive web apps — and
+            on my way to becoming a full stack MERN developer.
+          </p>
+          <div class="hero-btns reveal">
+            <a href="#projects" class="btn btn-primary"
+              >View my work <i class="fa-solid fa-arrow-right"></i
+            ></a>
+            <a href="#contact" class="btn btn-ghost">Let's talk</a>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="projects">
-      <div class="container">
-        <h1 class="sub-title">Projects</h1>
-        <div class="projects-list">
-          <div>
-            <h2>ToDo App</h2>
-            <img src="assests/todo.png" />
-            <br />
-            <p>
-              A simple and responsive To-Do application built using HTML, CSS,
-              and Vanilla JavaScript.
-            </p>
-            <a href="https://github.com/sumaiya7286/to-do-app.git"
-              >Github link</a
-            >
-          </div>
-          <div>
-            <h2>Weather App</h2>
-            <img src="assests/weather.png" /><br />
-            <p>
-              A responsive Weather App built with HTML, CSS, and Vanilla
-              JavaScript that provides real-time weather information using a
-              Weather API.
-            </p>
-            <a href="https://github.com/sumaiya7286/weather-app.git"
-              >Github link</a
-            >
+          <div class="hero-social reveal">
+            <a href="https://github.com/sumaiya7286" target="_blank" rel="noopener" aria-label="GitHub"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://www.linkedin.com/in/sumaiya-12403b417/" target="_blank" rel="noopener" aria-label="LinkedIn"
+              ><i class="fa-brands fa-linkedin-in"></i
+            ></a>
+            <a href="https://www.instagram.com/sumaiya_3667/" target="_blank" rel="noopener" aria-label="Instagram"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="mailto:sumaiyakhatoon772@gmail.com" aria-label="Email"
+              ><i class="fa-solid fa-envelope"></i
+            ></a>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="contact-left">
-            <h1 class="sub-title">Contact Me</h1>
+        <div class="hero-img reveal">
+          <div class="img-ring">
+            <img src="assets/user.webp" alt="Portrait of Sumaiya" width="420" height="436" />
+          </div>
+          <div class="float-card fc1"><i class="fa-brands fa-react"></i> React</div>
+          <div class="float-card fc2"><i class="fa-brands fa-js"></i> JavaScript</div>
+          <div class="float-card fc3"><i class="fa-solid fa-code"></i> Frontend</div>
+        </div>
+
+        <a href="#about" class="scroll-down" aria-label="Scroll down"><span></span></a>
+      </section>
+
+      <!-- about -->
+      <section id="about" class="section container">
+        <p class="eyebrow reveal">Get to know me</p>
+        <h2 class="section-title reveal">About <span class="gradient-text">Me</span></h2>
+
+        <div class="about-grid">
+          <div class="glass about-card reveal">
             <p>
-              <i class="fa-solid fa-envelope"></i>
-              sumaiyakhatoon772@gmail.com
+              I'm a <strong>second-year Computer Science student at IGDTUW</strong>, Delhi.
+              I love turning ideas into interfaces that look good and feel smooth to use.
+              Right now I'm sharpening my frontend skills with React while learning the
+              backend side to grow into a <strong>MERN stack developer</strong>.
             </p>
             <p>
-              <i class="fa-solid fa-phone"></i>
-              +91 8882498275
+              I've completed a remote lead generation internship at an automobile company and was selected for a hackathon — and I'm always looking for the
+              next thing to build.
             </p>
-            <div class="social-icons">
-              <a href="https://www.instagram.com/sumaiya_3667/" target="_blank">
-                <i class="fa-brands fa-instagram"></i>
-              </a>
+            <div class="stats">
+              <div class="stat"><h3 data-count="1">0</h3><p>Internship</p></div>
+              <div class="stat"><h3 data-count="2" data-suffix="nd">0</h3><p>Year at IGDTUW</p></div>
+              <div class="stat"><h3 data-count="1">0</h3><p>Hackathon</p></div>
+            </div>
+          </div>
 
-              <a href="https://github.com/sumaiya7286" target="_blank">
-                <i class="fa-brands fa-github"></i>
-              </a>
+          <div class="timeline reveal">
+            <div class="tl-item">
+              <span class="tl-dot"></span>
+              <div class="glass tl-card">
+                <span class="tl-tag">Experience</span>
+                <h4>Lead Generation Intern</h4>
+                <p>Automobile company · Remote</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-dot"></span>
+              <div class="glass tl-card">
+                <span class="tl-tag">Achievement</span>
+                <h4>Hackathon Selection</h4>
+                <p>Selected to compete in a hackathon</p>
+              </div>
+            </div>
+            <div class="tl-item">
+              <span class="tl-dot"></span>
+              <div class="glass tl-card">
+                <span class="tl-tag">Education</span>
+                <h4>B.Tech, Computer Science</h4>
+                <p>IGDTUW, Delhi · 2nd year</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <a
-                href="https://www.linkedin.com/in/sumaiya-12403b417/?isSelfProfile=false"
-                target="_blank"
+      <!-- skills -->
+      <section id="skills" class="section container">
+        <p class="eyebrow reveal">What I work with</p>
+        <h2 class="section-title reveal">My <span class="gradient-text">Skills</span></h2>
+
+        <div class="skills-grid">
+          <div class="skill glass reveal"><i class="fa-brands fa-html5" style="color:#f97316"></i><span>HTML5</span></div>
+          <div class="skill glass reveal"><i class="fa-brands fa-css3-alt" style="color:#3b82f6"></i><span>CSS3</span></div>
+          <div class="skill glass reveal"><i class="fa-brands fa-js" style="color:#facc15"></i><span>JavaScript</span></div>
+          <div class="skill glass reveal"><i class="fa-brands fa-react" style="color:#22d3ee"></i><span>React</span></div>
+          <div class="skill glass reveal"><i class="fa-solid fa-wind" style="color:#38bdf8"></i><span>Tailwind</span></div>
+          <div class="skill glass reveal"><i class="fa-brands fa-bootstrap" style="color:#a78bfa"></i><span>Bootstrap</span></div>
+          <div class="skill glass reveal"><i class="fa-brands fa-git-alt" style="color:#f05032"></i><span>Git</span></div>
+          <div class="skill glass reveal"><i class="fa-brands fa-github" style="color:#e5e7eb"></i><span>GitHub</span></div>
+        </div>
+
+        <p class="learning reveal">
+          <i class="fa-solid fa-seedling"></i> Currently learning:
+          <span class="chip">Node.js</span><span class="chip">Express</span><span class="chip">MongoDB</span>
+        </p>
+      </section>
+
+      <!-- projects -->
+      <section id="projects" class="section container">
+        <p class="eyebrow reveal">Things I've built</p>
+        <h2 class="section-title reveal">Featured <span class="gradient-text">Project</span></h2>
+
+        <article class="project featured glass reveal">
+          <div class="project-img">
+            <img src="assets/stash.webp" alt="Screenshot of the Stash landing page" loading="lazy" />
+          </div>
+          <div class="project-body">
+            <span class="tl-tag">Full-stack web app</span>
+            <h3>Stash — every link worth keeping</h3>
+            <p>
+              A calm home for the videos, docs and articles you mean to come back to. Paste a
+              link and Stash pulls in the title, thumbnail and site icon, then sorts it by type.
+              Organise with collections, tags, favourites and notes, search everything instantly,
+              and see changes sync live across phone, tablet and laptop.
+            </p>
+            <ul class="feature-list">
+              <li><i class="fa-solid fa-bolt"></i> Instant link previews</li>
+              <li><i class="fa-solid fa-magnifying-glass"></i> Search with ⌘K or /</li>
+              <li><i class="fa-solid fa-rotate"></i> Live sync on every device</li>
+              <li><i class="fa-solid fa-file-import"></i> Bookmark import &amp; JSON export</li>
+            </ul>
+            <div class="tags"><span>Authentication</span><span>Real-time sync</span><span>Responsive</span><span>Vercel</span></div>
+            <div class="project-links">
+              <a href="https://personal-link-valut.vercel.app/" target="_blank" rel="noopener" class="btn btn-primary btn-sm"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i> Live demo</a
               >
-                <i class="fa-brands fa-linkedin-in"></i>
-              </a>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </article>
+      </section>
 
-    <div class="copyright">
-      <p>&copy; 2026 Sumaiya. All Rights Reserved.</p>
-    </div>
+      <!-- contact -->
+      <section id="contact" class="section container">
+        <p class="eyebrow reveal">Say hello</p>
+        <h2 class="section-title reveal">Let's <span class="gradient-text">Connect</span></h2>
+
+        <div class="contact-grid">
+          <div class="contact-info reveal">
+            <p class="contact-lead">
+              Have an internship, project or just want to chat about web dev? My inbox is
+              always open.
+            </p>
+            <a href="mailto:sumaiyakhatoon772@gmail.com" class="contact-item glass">
+              <i class="fa-solid fa-envelope"></i>
+              <div><span>Email</span><p>sumaiyakhatoon772@gmail.com</p></div>
+            </a>
+            <a href="https://www.linkedin.com/in/sumaiya-12403b417/" target="_blank" rel="noopener" class="contact-item glass">
+              <i class="fa-brands fa-linkedin-in"></i>
+              <div><span>LinkedIn</span><p>Connect with me</p></div>
+            </a>
+            <a href="https://github.com/sumaiya7286" target="_blank" rel="noopener" class="contact-item glass">
+              <i class="fa-brands fa-github"></i>
+              <div><span>GitHub</span><p>@sumaiya7286</p></div>
+            </a>
+          </div>
+
+          <form class="contact-form glass reveal" id="contactForm">
+            <div class="field">
+              <input type="text" id="name" required placeholder=" " />
+              <label for="name">Your name</label>
+            </div>
+            <div class="field">
+              <input type="email" id="email" required placeholder=" " />
+              <label for="email">Your email</label>
+            </div>
+            <div class="field">
+              <textarea id="message" rows="5" required placeholder=" "></textarea>
+              <label for="message">Your message</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              Send message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <p class="form-note" id="formNote"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Designed &amp; built by <span class="gradient-text">Sumaiya</span> · &copy; <span id="year"></span></p>
+    </footer>
+
+    <a href="#home" class="to-top" id="toTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
 
     <script src="script.js"></script>
   </body>
